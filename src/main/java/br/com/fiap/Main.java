@@ -23,6 +23,9 @@ public class Main {
         EntityManagerFactory factory = Persistence.createEntityManagerFactory("oracle");
         EntityManager manager = factory.createEntityManager();
 
+//        findById(factory.createEntityManager());
+//        findAll(factory.createEntityManager());
+
 
         var bruno = new PessoaFisica();
         bruno.setCPF(geraCpf())
@@ -146,4 +149,15 @@ public class Main {
         return String.valueOf(numero);
     }
 
+//    public static void findById(EntityManager manager){
+//        Long id = Long.valueOf(JOptionPane.showInputDialog("Digite o id do Seguro"));
+//        Seguro seg = manager.find(Seguro.class, id);
+//        System.out.println(seg);
+//    }
+//
+//    public static void findAll(EntityManager manager){
+//        String jpql = "From TB_SEGURO";
+//        List<Seguro> resultList = manager.createQuery(jpql).getResultList();
+//        resultList.stream().forEach(System.out::println);
+//    }
 }

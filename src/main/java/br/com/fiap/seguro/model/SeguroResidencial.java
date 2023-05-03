@@ -2,11 +2,18 @@ package br.com.fiap.seguro.model;
 
 import br.com.fiap.asseguravel.model.Imovel;
 import br.com.fiap.pessoa.model.Pessoa;
+import jakarta.persistence.*;
 
 import java.time.LocalDate;
 
+@Entity
+@Table(name="TB_SEGURO_RESIDENCIAL")
+@DiscriminatorValue("SRES")
 public class SeguroResidencial extends Seguro {
-
+    @ManyToOne(fetch = FetchType.EAGER,  cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @JoinColumn(name = "ID_IMOVEL", referencedColumnName = "ID_IMOVEL",
+            foreignKey = @ForeignKey(name = "FK_SEGURORESIDENCIAL_IMOVEL", value = ConstraintMode.CONSTRAINT)
+    )
     private Imovel objeto;
 
     public SeguroResidencial() {
