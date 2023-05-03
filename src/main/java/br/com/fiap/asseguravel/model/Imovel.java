@@ -8,11 +8,14 @@ import java.util.Set;
 
 public class Imovel {
 
+
+    private Long id;
+
     private int qtdQuartos;
 
     private int qtdBanheiros;
 
-    private int intQtdVagasDeGaragem;
+    private int qtdVagasDeGaragem;
 
     private String numeroRegistroNoCartorio;
 
@@ -22,11 +25,32 @@ public class Imovel {
     public Imovel() {
     }
 
-    public Imovel(int qtdQuartos, int qtdBanheiros, int intQtdVagasDeGaragem, String numeroRegistroNoCartorio) {
+
+    public Imovel(Long id, int qtdQuartos, int qtdBanheiros, int qtdVagasDeGaragem, String numeroRegistroNoCartorio, Set<Pessoa> proprietarios) {
+        this.id = id;
         this.qtdQuartos = qtdQuartos;
         this.qtdBanheiros = qtdBanheiros;
-        this.intQtdVagasDeGaragem = intQtdVagasDeGaragem;
+        this.qtdVagasDeGaragem = qtdVagasDeGaragem;
         this.numeroRegistroNoCartorio = numeroRegistroNoCartorio;
+        this.proprietarios = proprietarios;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public Imovel setId(Long id) {
+        this.id = id;
+        return this;
+    }
+
+    public int getQtdVagasDeGaragem() {
+        return qtdVagasDeGaragem;
+    }
+
+    public Imovel setQtdVagasDeGaragem(int qtdVagasDeGaragem) {
+        this.qtdVagasDeGaragem = qtdVagasDeGaragem;
+        return this;
     }
 
     public int getQtdQuartos() {
@@ -47,14 +71,6 @@ public class Imovel {
         return this;
     }
 
-    public int getIntQtdVagasDeGaragem() {
-        return intQtdVagasDeGaragem;
-    }
-
-    public Imovel setIntQtdVagasDeGaragem(int intQtdVagasDeGaragem) {
-        this.intQtdVagasDeGaragem = intQtdVagasDeGaragem;
-        return this;
-    }
 
     public String getNumeroRegistroNoCartorio() {
         return numeroRegistroNoCartorio;
@@ -82,13 +98,13 @@ public class Imovel {
         return this;
     }
 
-
     @Override
     public String toString() {
         return "Imovel{" +
-                "qtdQuartos=" + qtdQuartos +
+                "id=" + id +
+                ", qtdQuartos=" + qtdQuartos +
                 ", qtdBanheiros=" + qtdBanheiros +
-                ", intQtdVagasDeGaragem=" + intQtdVagasDeGaragem +
+                ", qtdVagasDeGaragem=" + qtdVagasDeGaragem +
                 ", numeroRegistroNoCartorio='" + numeroRegistroNoCartorio + '\'' +
                 ", proprietarios=" + proprietarios +
                 '}';

@@ -4,6 +4,8 @@ import br.com.fiap.pessoa.model.Pessoa;
 
 public class Veiculo {
 
+    private Long id;
+
     private String chassis;
 
     private String placa;
@@ -19,7 +21,8 @@ public class Veiculo {
     public Veiculo() {
     }
 
-    public Veiculo(String chassis, String placa, String modelo, int anoDeFabricacao, String fabricante, Pessoa proprietario) {
+    public Veiculo(Long id, String chassis, String placa, String modelo, int anoDeFabricacao, String fabricante, Pessoa proprietario) {
+        this.id = id;
         this.chassis = chassis;
         this.placa = placa;
         this.modelo = modelo;
@@ -81,5 +84,27 @@ public class Veiculo {
     public Veiculo setProprietario(Pessoa proprietario) {
         this.proprietario = proprietario;
         return this;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public Veiculo setId(Long id) {
+        this.id = id;
+        return this;
+    }
+
+    @Override
+    public String toString() {
+        return "Veiculo{" +
+                "id=" + id +
+                ", chassis='" + chassis + '\'' +
+                ", placa='" + placa + '\'' +
+                ", modelo='" + modelo + '\'' +
+                ", anoDeFabricacao=" + anoDeFabricacao +
+                ", fabricante='" + fabricante + '\'' +
+                ", proprietario=" + proprietario +
+                '}';
     }
 }

@@ -4,7 +4,7 @@ import br.com.fiap.pessoa.model.Pessoa;
 
 public class Corretor {
 
-    private long id;
+    private Long id;
 
     private String numeroSUSEP;
 
